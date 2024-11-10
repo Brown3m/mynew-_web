@@ -4,224 +4,212 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Amos Beauty and Skincare Essentials store</title>
-    <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css">
   <style>
-   
-/* Testimonial Section */
-.testimonial-section {
-  margin-bottom: 80px; /* Increased space below the testimonial section */
-  padding: 5%;
-  width: 90%;
-  max-width: 1200px;
-  margin-top: 50px;
-  text-align: center;
-  perspective: 1500px;
-  position: relative;
-  box-sizing: border-box;
-}
+    /* Testimonial Section */
+    .testimonial-section {
+      margin-bottom: 80px; /* Increased space below the testimonial section */
+      padding: 5%;
+      width: 90%;
+      max-width: 1200px;
+      margin-top: 50px;
+      text-align: center;
+      perspective: 1500px;
+      position: relative;
+      box-sizing: border-box;
+    }
 
-/* Testimonial Title */
-.testimonial-title {
-  font-size: 2rem;
-  margin-bottom: 30px; /* Increased space below the title */
-  color: #333;
-}
+    /* Testimonial Title */
+    .testimonial-title {
+      font-size: 2rem;
+      margin-bottom: 30px; /* Increased space below the title */
+      color: #333;
+    }
 
-/* 3D Circular Carousel Container */
-.carousel-containers {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  margin: 0 auto;
-  overflow: hidden;
-  transform-style: preserve-3d;
-  transform: rotateX(0deg); /* Slight rotation to give 3D effect */
-  animation: rotateCircle 30s infinite linear;
-}
+    /* 3D Circular Carousel Container */
+    .carousel-containers {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      margin: 0 auto;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transform: rotateX(0deg); /* Slight rotation to give 3D effect */
+      animation: rotateCircle 30s infinite linear;
+    }
 
-.carousel-wrapper {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  animation: rotateCircle 20s infinite linear;
-}
+    .carousel-wrapper {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      animation: rotateCircle 20s infinite linear;
+    }
 
-/* Testimonial Cards positioned in 3D circle */
-.testimonial-card {
-  position: absolute;
-  width: 300px;
-  height: 250px;
-  margin-top: 100px; /* Adjust the height to position the cards in the center */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  text-align: center;
-  transition: transform 0.3s ease;
-  transform-origin: center;
-  overflow: hidden; /* Ensure no overflow of content */
-}
+    /* Testimonial Cards positioned in 3D circle */
+    .testimonial-card {
+      position: absolute;
+      width: 300px;
+      height: 250px;
+      margin-top: 100px; /* Adjust the height to position the cards in the center */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      text-align: center;
+      transition: transform 0.3s ease;
+      transform-origin: center;
+      overflow: hidden; /* Ensure no overflow of content */
+    }
 
-.testimonial-card img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin-bottom: 15px;
-}
+    .testimonial-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
 
-.testimonial-card h3 {
-  font-size: 1.25rem;
-  color: #333;
-  margin-bottom: 10px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap; /* Prevent text from overflowing */
-}
+    .testimonial-card h3 {
+      font-size: 1.25rem;
+      color: #333;
+      margin-bottom: 10px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap; /* Prevent text from overflowing */
+    }
 
-.testimonial-card p {
-  font-size: 1rem;
-  color: #666;
-  line-height: 1.5;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* Limit text to 3 lines */
-  -webkit-box-orient: vertical;
-}
+    .testimonial-card p {
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.5;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3; /* Limit text to 3 lines */
+      -webkit-box-orient: vertical;
+    }
 
-/* 3D Circular Effect */
-@keyframes rotateCircle {
-  0% { transform: rotateY(0deg); }
-  100% { transform: rotateY(360deg); }
-}
+    /* 3D Circular Effect */
+    @keyframes rotateCircle {
+      0% { transform: rotateY(0deg); }
+      100% { transform: rotateY(360deg); }
+    }
 
-/* Shake animation on hover */
-@keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-10px); }
-  50% { transform: translateX(10px); }
-  75% { transform: translateX(-10px); }
-  100% { transform: translateX(0); }
-}
+    /* Mobile & Tablet Responsiveness */
+    @media (max-width: 768px) {
+      .testimonial-section {
+        padding: 3%; /* Reduce padding for smaller screens */
+      }
 
-/* Mobile & Tablet Responsiveness */
-@media (max-width: 768px) {
-  .testimonial-section {
-    padding: 3%; /* Reduce padding for smaller screens */
-  }
+      .testimonial-card {
+        width: 250px;
+        height: 200px;
+        margin-top: 80px; /* Adjust margin for smaller screens */
+      }
 
-  .testimonial-card {
-    width: 250px;
-    height: 200px;
-    margin-top: 80px; /* Adjust margin for smaller screens */
-  }
+      .testimonial-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+      }
 
-  .testimonial-title {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-  }
+      .testimonial-card h3 {
+        font-size: 1.1rem; /* Slightly smaller heading for small screens */
+      }
 
-  .testimonial-card h3 {
-    font-size: 1.1rem; /* Slightly smaller heading for small screens */
-  }
+      .testimonial-card p {
+        font-size: 0.9rem; /* Smaller text for mobile */
+      }
+    }
 
-  .testimonial-card p {
-    font-size: 0.9rem; /* Smaller text for mobile */
-  }
-}
+    @media (max-width: 480px) {
+      .testimonial-section {
+        padding: 2%; /* Further reduce padding on very small screens */
+      }
 
-@media (max-width: 480px) {
-  .testimonial-section {
-    padding: 2%; /* Further reduce padding on very small screens */
-  }
+      .testimonial-card {
+        width: 200px;
+        height: 180px;
+        margin-top: 60px; /* Adjust margin for very small screens */
+      }
 
-  .testimonial-card {
-    width: 200px;
-    height: 180px;
-    margin-top: 60px; /* Adjust margin for very small screens */
-  }
+      .testimonial-title {
+        font-size: 1.25rem;
+        margin-bottom: 10px; /* Reduced bottom margin */
+      }
 
-  .testimonial-title {
-    font-size: 1.25rem;
-    margin-bottom: 10px; /* Reduced bottom margin */
-  }
+      .testimonial-card h3 {
+        font-size: 1rem; /* Small font for very small screens */
+      }
 
-  .testimonial-card h3 {
-    font-size: 1rem; /* Small font for very small screens */
-  }
+      .testimonial-card p {
+        font-size: 0.8rem; /* Small text for very small screens */
+      }
+    }
 
-  .testimonial-card p {
-    font-size: 0.8rem; /* Small text for very small screens */
-  }
-}
+    /* Empty Section to create white space */
+    .empty-space {
+      height: 200px; /* height */
+      background-color: white; /* ensures it is white even if the default background is changed */
+    }
 
-/* Empty Section to create white space */
-.empty-space {
-  height: 200px; /*  height */
-  background-color: white; /* ensures it is white even if the default background is changed */
-}
-   
   </style>
-  </head>
-  <body>
-   <!-- Promo Banner -->
-<div class="amos-promo">
-  <div class="amos-promo-content">
-    <span class="amos-promo-text">Welcome to Amos Beauty and Skincare Essentials!</span>
-    <button class="amos-close-btn" onclick="closeAmosPromoBanner()">X</button>
-  </div>
-</div>
-    <script>// Function to close the promo banner
-function closeAmosPromoBanner() {
-  const banner = document.querySelector('.amos-promo');
-  banner.classList.add('closed');
-}
-</script>
-    <header class="header">
-      <div class="nav-container">
-       
-        <a href="index.html" class="logo">
-          <img src="Green Tea & Aloe Facial Cleanser.jpg" alt="Shop Logo">
-        </a>
-  
-      
-        <span class="toggle-btn" onclick="toggleSidebar()">&#9776;</span>
-  
-        
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about us.html">About Us</a></li>
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="contact us.html">Contact</a></li>
-        </ul>
-  
-       
-        <div class="actions">
-          <a href="login-sign in.html" class="btn btn-outline">Login</a>
-          <a href="login-sign in.html" class="btn btn-primary">Sign Up</a>
-        </div>
-      </div>
-    </header>
-  
-    <div id="sidebarMenu" class="sidebar">
-      <span class="close-btn" onclick="toggleSidebar()">&times;</span>
-      <a href="index.html">Home</a>
-      <a href="about us.html">About Us</a>
-      <a href="shop.html">Shop</a>
-      <a href="contact us.html">Contact</a>
-      <a href="login-sign in.html" class="btn btn-outline d-block">Login</a>
-      <a href="login-sign in.html" class="btn btn-primary d-block">Sign Up</a>
+</head>
+<body>
+  <!-- Promo Banner -->
+  <div class="amos-promo">
+    <div class="amos-promo-content">
+      <span class="amos-promo-text">Welcome to Amos Beauty and Skincare Essentials!</span>
+      <button class="amos-close-btn" onclick="closeAmosPromoBanner()">X</button>
     </div>
-    <script src="header.js"></script>
+  </div>
 
-  
+  <script>
+    // Function to close the promo banner
+    function closeAmosPromoBanner() {
+      const banner = document.querySelector('.amos-promo');
+      banner.classList.add('closed');
+    }
+  </script>
+
+  <header class="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="Green Tea & Aloe Facial Cleanser.jpg" alt="Shop Logo">
+      </a>
+
+      <span class="toggle-btn" onclick="toggleSidebar()">&#9776;</span>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about us.html">About Us</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contact us.html">Contact</a></li>
+      </ul>
+
+      <div class="actions">
+        <a href="login-sign in.html" class="btn btn-outline">Login</a>
+        <a href="login-sign in.html" class="btn btn-primary">Sign Up</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="sidebarMenu" class="sidebar">
+    <span class="close-btn" onclick="toggleSidebar()">&times;</span>
+    <a href="index.html">Home</a>
+    <a href="about us.html">About Us</a>
+    <a href="shop.html">Shop</a>
+    <a href="contact us.html">Contact</a>
+    <a href="login-sign in.html" class="btn btn-outline d-block">Login</a>
+    <a href="login-sign in.html" class="btn btn-primary d-block">Sign Up</a>
+  </div>
+  <script src="header.js"></script>
+
   <!-- Testimonial Section -->
   <section class="testimonial-section">
+    <h2 class="testimonial-title">What Our Customers and Under Are Saying</h2>
     <h2 class="testimonial-title">What Our Customers Are Saying</h2>
     <div class="carousel-container">
       <div class="carousel-wrapper" id="carouselWrapper">
-
         <!-- Testimonial 1 -->
         <div class="testimonial-card" style="transform: rotateY(0deg) translateZ(500px);">
           <img src="test0.jpeg.jpeg">
@@ -263,81 +251,78 @@ function closeAmosPromoBanner() {
           <h3>David Moore</h3>
           <p>"Fantastic! I’ve never been more satisfied with a product. Will definitely purchase again!"</p>
         </div>
-
       </div>
     </div>
+    <p>Under are what our customers are saying!</p>
   </section>
 
   <script>
-    //Adjust the speed of the carousel's rotation
+    // Adjust the speed of the carousel's rotation
     const carouselWrapper = document.getElementById('carouselWrapper');
     let speed = 8; // Rotation speed (in seconds)
     carouselWrapper.style.animationDuration = `${speed}s`;
   </script>
 
-<section class="empty-space"></section>
-   
+  <section class="empty-space"></section>
 
- <!-- Custom Footer Section -->
-<footer class="custom-footer">
-  <div class="footer-container">
-    <!-- Logo and Slogan -->
-    <div class="footer-logo">
-      <img src="Green Tea & Aloe Facial Cleanser.jpg" alt="Brand Logo" class="footer-logo-img">
-      <p class="footer-slogan">Join the Movement, Stay Ahead!</p>
-    </div>
+  <!-- Custom Footer Section -->
+  <footer class="custom-footer">
+    <div class="footer-container">
+      <!-- Logo and Slogan -->
+      <div class="footer-logo">
+        <img src="Green Tea & Aloe Facial Cleanser.jpg" alt="Brand Logo" class="footer-logo-img">
+        <p class="footer-slogan">Join the Movement, Stay Ahead!</p>
+      </div>
 
-    <!-- Important Links -->
-    <div class="footer-links">
-      <h3 class="footer-section-title">Quick Links</h3>
-      <ul class="footer-link-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about us.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact us.html">Contact</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms & Conditions</a></li>
-      </ul>
-    </div>
+      <!-- Important Links -->
+      <div class="footer-links">
+        <h3 class="footer-section-title">Quick Links</h3>
+        <ul class="footer-link-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about us.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact us.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
 
-    <!-- Our Community & Social Media -->
-    <div class="footer-community">
-      <h3 class="footer-section-title">Our Community</h3>
-      <p>Be part of a vibrant, supportive community where you can learn, share, and grow together.</p>
-      <a href="community.html" class="community-btn">Join Our Community</a>
-      <div class="footer-social">
-        <a href="#" class="social-icon"><img src="faebook.jpg" alt="Facebook"></a>
-        <a href="#" class="social-icon"><img src="instagram.gif" alt="Instagram"></a>
-        <a href="#" class="social-icon"><img src="twitter.png" alt="Twitter"></a>
-        <a href="#" class="social-icon"><img src="linked-in.png" alt="LinkedIn"></a>
+      <!-- Our Community & Social Media -->
+      <div class="footer-community">
+        <h3 class="footer-section-title">Our Community</h3>
+        <p>Be part of a vibrant, supportive community where you can learn, share, and grow together.</p>
+        <a href="community.html" class="community-btn">Join Our Community</a>
+        <div class="footer-social">
+          <a href="#" class="social-icon"><img src="faebook.jpg" alt="Facebook"></a>
+          <a href="#" class="social-icon"><img src="instagram.gif" alt="Instagram"></a>
+          <a href="#" class="social-icon"><img src="twitter.png" alt="Twitter"></a>
+          <a href="#" class="social-icon"><img src="linked-in.png" alt="LinkedIn"></a>
+        </div>
+      </div>
+
+      <!-- Newsletter Signup -->
+      <div class="footer-newsletter">
+        <h3 class="footer-section-title">Stay Informed</h3>
+        <p>Subscribe to our newsletter for updates, offers, and news straight to your inbox.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Enter your email" class="email-input" id="emailInput" required>
+          <button class="newsletter-btn" id="subscribeBtn">Subscribe</button>
+        </div>
       </div>
     </div>
-
-    <!-- Newsletter Signup -->
-    <div class="footer-newsletter">
-      <h3 class="footer-section-title">Stay Informed</h3>
-      <p>Subscribe to our newsletter for updates, offers, and news straight to your inbox.</p>
-      <div class="newsletter-form">
-        <input type="email" placeholder="Enter your email" class="email-input" id="emailInput" required>
-        <button class="newsletter-btn" id="subscribeBtn">Subscribe</button>
+    <!-- Popup Message -->
+    <div id="popupMessage" class="popup-message">
+      <div class="popup-content">
+        <span id="popupCloseBtn" class="popup-close-btn">&times;</span>
+        <h3>🎉 Successfully Subscribed! 🎉</h3>
+        <p>Thank you for subscribing to our newsletter. Stay tuned for the latest updates.</p>
       </div>
     </div>
-  </div>
- <!-- Popup Message -->
- <div id="popupMessage" class="popup-message">
-  <div class="popup-content">
-    <span id="popupCloseBtn" class="popup-close-btn">&times;</span>
-    <h3>🎉 Successfully Subscribed! 🎉</h3>
-    <p>Thank you for subscribing to our newsletter. Stay tuned for the latest updates.</p>
-  </div>
-</div>
-</footer>
-<script src="newspapers subscribed.js"></script>
+  </footer>
+  <script src="newspapers subscribed.js"></script>
   <!-- Footer Bottom Section -->
   <div class="footer-bottom">
     <p>&copy; 2024 Amos Beauty and Skincare Essentials store. All Rights Reserved.</p>
   </div>
-
- 
 </body>
 </html>
