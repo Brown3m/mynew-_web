@@ -33,7 +33,66 @@ body,html{
     height: 40px;
   }
 
-  
+
+
+
+/* Header Links */
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1em;
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and transform */
+}
+
+.nav-links a:hover {
+  color: #007bff; /* Change color to blue when hovered */
+  transform: scale(1.05); /* Slightly enlarge the link for a hover effect */
+}
+
+/* Sidebar Links */
+.sidebar a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 1.2em;
+  color: #333;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+}
+
+.sidebar a:hover {
+  color: #fff; /* Change text color to white */
+  background-color: #007bff; /* Change background to blue */
+}
+
+/* Button Hover Effects */
+.btn {
+  padding: 5px 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Outline Button Hover */
+.btn-outline:hover {
+  background-color: #007bff; /* Change background to blue */
+  color: white; /* Change text color to white */
+  border-color: #007bff; /* Keep the border blue */
+}
+
+/* Primary Button Hover */
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  color: white; /* Text stays white */
+}
+
+/* Hover effect for buttons with transparency */
+.button:hover {
+  background-color: rgba(0, 123, 255, 0.2); /* Slight transparency with blue */
+  transform: scale(1.05); /* Slight enlarge effect on hover */
+}
+
+
   .nav-links {
     display: flex;
     list-style: none;
