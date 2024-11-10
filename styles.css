@@ -1313,7 +1313,7 @@ body {
 
 
 .containers {
-  width: 100%;
+  width: 65%;
   max-width: 400px;
   padding: 20px;
   background: #ffffff;
@@ -1342,7 +1342,7 @@ input[type="password"] {
   font-size: 16px;
 }
 
-.buttons {
+.buttonss {
   padding: 12px;
   background-color: #007bff;
   border: none;
@@ -1352,13 +1352,13 @@ input[type="password"] {
   cursor: pointer;
 }
 
-.toggle-buttons {
+.toggle-buttonss {
   display: flex;
   justify-content: space-around;
   margin-bottom: 20px;
 }
 
-.toggle-buttons button {
+.toggle-buttonss button {
   background-color: #f0f0f0;
   color: #007bff;
   border: none;
@@ -1369,7 +1369,7 @@ input[type="password"] {
   transition: background-color 0.3s;
 }
 
-.toggle-buttons button.active {
+.toggle-buttonss button.active {
   background-color: #007bff;
   color: #fff;
 }
