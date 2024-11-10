@@ -5,6 +5,120 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Amos Beauty and Skincare Essentials store</title>
     <link rel="stylesheet" href="styles.css">
+  <style>
+   
+
+    /* Testimonial Section */
+    .testimonial-section {
+      margin-top:20px;
+      margin-buttom:20px;
+      width: 90%;
+      max-width: 1200px;
+      margin: 50px auto;
+      text-align: center;
+      perspective: 1500px; /* Perspective for 3D effect */
+      position: relative;
+    }
+
+    .testimonial-title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    /* 3D Circular Carousel Container */
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      margin: 0 auto;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transform: rotateX(0deg); /* Slight rotation to give 3D effect */
+      animation: rotateCircle 30s infinite linear;
+    }
+
+    .carousel-wrapper {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      animation: rotateCircle 20s infinite linear;
+    }
+
+    /* Testimonial Cards positioned in 3D circle */
+    .testimonial-card {
+      position: absolute;
+      width: 300px;
+      height: 250px;
+      margin-top: 100px; /* Adjust the height to position the cards in the center */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      text-align: center;
+      transition: transform 0.3s ease;
+      transform-origin: center;
+    }
+
+    .testimonial-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-card h3 {
+      font-size: 1.25rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-card p {
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    /* 3D Circular Effect */
+    @keyframes rotateCircle {
+      0% { transform: rotateY(0deg); }
+      100% { transform: rotateY(360deg); }
+    }
+
+    /* Shake animation on hover */
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-10px); }
+      50% { transform: translateX(10px); }
+      75% { transform: translateX(-10px); }
+      100% { transform: translateX(0); }
+    }
+
+    /* Mobile & Tablet Responsiveness */
+    @media (max-width: 768px) {
+      .testimonial-card {
+        width: 250px;
+        height: 200px;
+      }
+
+      .testimonial-title {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .testimonial-card {
+        width: 200px;
+        height: 180px;
+      }
+
+      .testimonial-title {
+        font-size: 1.25rem;
+      }
+    }
+
+  </style>
   </head>
   <body>
    <!-- Promo Banner -->
@@ -280,6 +394,65 @@ function closeAmosPromoBanner() {
 </section>
 
   
+  <!-- Testimonial Section -->
+  <section class="testimonial-section">
+    <h2 class="testimonial-title">What Our Customers Are Saying</h2>
+    <div class="carousel-container">
+      <div class="carousel-wrapper" id="carouselWrapper">
+
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card" style="transform: rotateY(0deg) translateZ(500px);">
+          <img src="https://via.placeholder.com/80" alt="Customer 1">
+          <h3>John Doe</h3>
+          <p>"This product changed my life! I can't imagine going back to my old routine. Highly recommend it!"</p>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card" style="transform: rotateY(60deg) translateZ(500px);">
+          <img src="https://via.placeholder.com/80" alt="Customer 2">
+          <h3>Jane Smith</h3>
+          <p>"Amazing quality and great customer service. I'll definitely be ordering again soon!"</p>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card" style="transform: rotateY(120deg) translateZ(500px);">
+          <img src="https://via.placeholder.com/80" alt="Customer 3">
+          <h3>Mark Taylor</h3>
+          <p>"A must-have for anyone looking to improve their skincare. I saw results almost immediately!"</p>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div class="testimonial-card" style="transform: rotateY(180deg) translateZ(500px);">
+          <img src="https://via.placeholder.com/80" alt="Customer 4">
+          <h3>Emily White</h3>
+          <p>"The best purchase I've made in a while! My skin has never felt so good. Love it!"</p>
+        </div>
+
+        <!-- Testimonial 5 -->
+        <div class="testimonial-card" style="transform: rotateY(240deg) translateZ(500px);">
+          <img src="https://via.placeholder.com/80" alt="Customer 5">
+          <h3>Sarah Lee</h3>
+          <p>"I absolutely love this product! It works wonders on my skin, and the results are visible almost immediately!"</p>
+        </div>
+
+        <!-- Testimonial 6 -->
+        <div class="testimonial-card" style="transform: rotateY(300deg) translateZ(500px);">
+          <img src="https://via.placeholder.com/80" alt="Customer 6">
+          <h3>David Moore</h3>
+          <p>"Fantastic! I’ve never been more satisfied with a product. Will definitely purchase again!"</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    //Adjust the speed of the carousel's rotation
+    const carouselWrapper = document.getElementById('carouselWrapper');
+    let speed = 15; // Rotation speed (in seconds)
+    carouselWrapper.style.animationDuration = `${speed}s`;
+  </script>
+
 
   <!-- Stay Connected Section -->
 <section class="stay-connected-section">
