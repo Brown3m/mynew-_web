@@ -1,18 +1,22 @@
-function subscribe() {
-    const emailInput = document.getElementById('emailInput').value;
-    if (emailInput) {
-      // Show pop-up
-      const popup = document.getElementById('popup');
-      popup.style.display = 'flex';
+document.getElementById('subscribeBtn').addEventListener('click', function() {
+    var email = document.getElementById('emailInput').value;
   
-      // Hide pop-up after 3 seconds
+    // Validate email input (basic check)
+    if (email) {
+      // Display the popup message
+      document.getElementById('popupMessage').style.display = 'flex';
+      
+      // Hide the popup after 3 seconds
       setTimeout(function() {
-        popup.style.display = 'none';
+        document.getElementById('popupMessage').style.display = 'none';
       }, 3000);
-  
-      // Reset email input
-      document.getElementById('emailInput').value = '';
     } else {
-      alert('Please enter a valid email address!');
+      alert('Please enter a valid email address.');
     }
-  }
+  });
+  
+  // Close the popup if the user clicks the close button
+  document.getElementById('popupCloseBtn').addEventListener('click', function() {
+    document.getElementById('popupMessage').style.display = 'none';
+  });
+  
