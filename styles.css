@@ -320,6 +320,7 @@ body {
 
 
   .custom-featured-products {
+  
     padding: 50px 0;
     background-color: #f4f4f4;
   }
@@ -518,6 +519,7 @@ body {
 
  
 .stay-connected-section {
+  margin-top:50px;
   background-color: #928e8e;
   padding: 50px 0;
   text-align: center;
