@@ -1386,3 +1386,57 @@ input[type="password"] {
   z-index: 1000;
   font-size: 14px;
 }
+
+
+/* General Styling for the Promo Banner */
+.amos-promo {
+  width: 100%;
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 15px 0;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Content Inside the Banner */
+.amos-promo-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Text Styling */
+.amos-promo-text {
+  flex-grow: 1;
+  padding-right: 20px;
+}
+
+/* Close Button Styling */
+.amos-close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Close Button Hover Effect */
+.amos-close-btn:hover {
+  color: red;
+}
+
+/* Hide the promo banner when it's closed */
+.amos-promo.closed {
+  display: none;
+}
+
