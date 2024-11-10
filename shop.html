@@ -1,12 +1,12 @@
-  
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amos Beauty and Skincare Essentials store</title>
-    <link rel="stylesheet" href="styles.css">
+  <title>Amos Beauty and Skincare Essentials Store</title>
+  <link rel="stylesheet" href="styles.css">
   <style>
+    /* General Container */
     .custom-container {
       width: 90%;
       max-width: 1200px;
@@ -14,6 +14,7 @@
       padding: 20px;
     }
 
+    /* Product Card Container */
     .custom-product-card-container {
       display: flex;
       gap: 20px;
@@ -21,35 +22,75 @@
       justify-content: space-between;
     }
 
+    /* Individual Product Card */
     .custom-product-card {
       width: 22%;
       background: #fff;
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       overflow: hidden;
-      transition: transform 0.3s;
+      position: relative;
+      perspective: 1000px;
+      cursor: pointer;
     }
 
-    .custom-product-card img {
+    /* Product Card Flip Effect */
+    .custom-product-card-inner {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+    }
+
+    .custom-product-card:hover .custom-product-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    /* Front of Product Card */
+    .custom-product-card-front,
+    /* Back of Product Card */
+    .custom-product-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    }
+
+    .custom-product-card-front img {
       width: 100%;
       height: 200px;
       object-fit: cover;
     }
 
-    .custom-product-card h5 {
+    .custom-product-card-back {
+      background: #fff;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+      transform: rotateY(180deg);
+    }
+
+    .custom-product-card-back h5,
+    .custom-product-card-back p {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    .custom-product-card-back .custom-product-btn {
+      margin-top: 15px;
+    }
+
+    .custom-product-title,
+    .custom-product-price {
       margin: 15px;
       font-size: 18px;
       color: #333;
     }
 
-    .custom-product-price {
-      margin: 10px 15px;
-      font-size: 16px;
-      color: #007bff;
-    }
-
     .custom-product-btn {
-      margin: 10px 15px;
       padding: 10px 15px;
       background-color: #007bff;
       color: #fff;
@@ -62,6 +103,26 @@
 
     .custom-product-btn:hover {
       background-color: #0056b3;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 1200px) {
+      .custom-product-card {
+        width: 30%;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .custom-product-card {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .custom-product-card {
+        width: 100%;
+        margin-bottom: 20px;
+      }
     }
 
     /* Modal Style */
@@ -100,47 +161,8 @@
       background-color: #0056b3;
     }
   </style>
-  </head>
-  <body>
-   
-    <header class="header">
-      <div class="nav-container">
-       
-        <a href="index.html" class="logo">
-          <img src="Green Tea & Aloe Facial Cleanser.jpg" alt="Shop Logo">
-        </a>
-  
-      
-        <span class="toggle-btn" onclick="toggleSidebar()">&#9776;</span>
-  
-        
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about us.html">About Us</a></li>
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="contact us.html">Contact</a></li>
-        </ul>
-  
-       
-        <div class="actions">
-          <a href="login-sign in.html" class="btn btn-outline">Login</a>
-          <a href="login-sign in.html" class="btn btn-primary">Sign Up</a>
-        </div>
-      </div>
-    </header>
-  
-    <div id="sidebarMenu" class="sidebar">
-      <span class="close-btn" onclick="toggleSidebar()">&times;</span>
-      <a href="index.html">Home</a>
-      <a href="about us.html">About Us</a>
-      <a href="shop.html">Shop</a>
-      <a href="contact us.html">Contact</a>
-      <a href="login-sign in.html" class="btn btn-outline d-block">Login</a>
-      <a href="login-sign in.html" class="btn btn-primary d-block">Sign Up</a>
-    </div>
-    <script src="header.js"></script>
-
-
+</head>
+<body>
 
   <!-- Product Section -->
   <section class="custom-featured-products">
@@ -150,83 +172,51 @@
         
         <!-- Product 1 -->
         <div class="custom-product-card" id="product1">
-          <img src="natural v c.jpg" alt="Natural Vitamin C Serum" class="custom-product-image">
-          <h5 class="custom-product-title">Natural Vitamin C Serum</h5>
-          <p class="custom-product-price">$29.99</p>
-          <p class="custom-product-description">Brighten & Revitalize your skin with Vitamin C.</p>
-          <button class="custom-product-btn" onclick="addToCart('Natural Vitamin C Serum', '$29.99')">Add to Cart</button>
+          <div class="custom-product-card-inner">
+            <div class="custom-product-card-front">
+              <img src="natural v c.jpg" alt="Natural Vitamin C Serum" class="custom-product-image">
+            </div>
+            <div class="custom-product-card-back">
+              <h5 class="custom-product-title">Natural Vitamin C Serum</h5>
+              <p class="custom-product-price">$29.99</p>
+              <p class="custom-product-description">Brighten & Revitalize your skin with Vitamin C.</p>
+              <button class="custom-product-btn" onclick="addToCart('Natural Vitamin C Serum', '$29.99')">Add to Cart</button>
+            </div>
+          </div>
         </div>
-    
+
         <!-- Product 2 -->
         <div class="custom-product-card" id="product2">
-          <img src="Lavender Night Cream.jpg" alt="Lavender Night Cream" class="custom-product-image">
-          <h5 class="custom-product-title">Lavender Night Cream</h5>
-          <p class="custom-product-price">$39.99</p>
-          <p class="custom-product-description">Calm and hydrate your skin overnight.</p>
-          <button class="custom-product-btn" onclick="addToCart('Lavender Night Cream', '$39.99')">Add to Cart</button>
+          <div class="custom-product-card-inner">
+            <div class="custom-product-card-front">
+              <img src="Lavender Night Cream.jpg" alt="Lavender Night Cream" class="custom-product-image">
+            </div>
+            <div class="custom-product-card-back">
+              <h5 class="custom-product-title">Lavender Night Cream</h5>
+              <p class="custom-product-price">$39.99</p>
+              <p class="custom-product-description">Calm and hydrate your skin overnight.</p>
+              <button class="custom-product-btn" onclick="addToCart('Lavender Night Cream', '$39.99')">Add to Cart</button>
+            </div>
+          </div>
         </div>
-    
+
         <!-- Product 3 -->
         <div class="custom-product-card" id="product3">
-          <img src="Activated Charcoal Face Mask1.jpg" alt="Activated Charcoal Face Mask" class="custom-product-image">
-          <h5 class="custom-product-title">Activated Charcoal Face Mask</h5>
-          <p class="custom-product-price">$19.99</p>
-          <p class="custom-product-description">Deep clean and detoxify your skin with activated charcoal.</p>
-          <button class="custom-product-btn" onclick="addToCart('Activated Charcoal Face Mask', '$19.99')">Add to Cart</button>
+          <div class="custom-product-card-inner">
+            <div class="custom-product-card-front">
+              <img src="Activated Charcoal Face Mask1.jpg" alt="Activated Charcoal Face Mask" class="custom-product-image">
+            </div>
+            <div class="custom-product-card-back">
+              <h5 class="custom-product-title">Activated Charcoal Face Mask</h5>
+              <p class="custom-product-price">$19.99</p>
+              <p class="custom-product-description">Deep clean and detoxify your skin with activated charcoal.</p>
+              <button class="custom-product-btn" onclick="addToCart('Activated Charcoal Face Mask', '$19.99')">Add to Cart</button>
+            </div>
+          </div>
         </div>
-    
-        <!-- Product 4 -->
-        <div class="custom-product-card" id="product4">
-          <img src="Coconut & Vanilla Body Scrub 1.jpg" alt="Coconut & Vanilla Body Scrub" class="custom-product-image">
-          <h5 class="custom-product-title">Coconut & Vanilla Body Scrub</h5>
-          <p class="custom-product-price">$24.99</p>
-          <p class="custom-product-description">Exfoliate and hydrate your skin with a tropical scent.</p>
-          <button class="custom-product-btn" onclick="addToCart('Coconut & Vanilla Body Scrub', '$24.99')">Add to Cart</button>
-        </div>
-<!-- Product 5 - Aloe Vera Gel (Eco-Friendly & Medicinal) -->
-<div class="custom-product-card" id="product4">
-  <img src="Aloe Vera Gel.jpeg" alt="Aloe Vera Gel" class="custom-product-image">
-  <h5 class="custom-product-title">Aloe Vera Gel</h5>
-  <p class="custom-product-price">$14.99</p>
-  <p class="custom-product-description">Pure organic Aloe Vera gel for soothing skin irritation, burns, and sunburns. 100% natural & vegan-friendly.</p>
-  <button class="custom-product-btn" onclick="addToCart('Aloe Vera Gel', '$14.99')">Add to Cart</button>
-</div>
 
-<!-- Product 6 - Green Tea Antioxidant Cream (Eco-Friendly) -->
-<div class="custom-product-card" id="product5">
-  <img src="Green Tea Antioxidant Cream.jpg" alt="Green Tea Antioxidant Cream" class="custom-product-image">
-  <h5 class="custom-product-title">Green Tea Antioxidant Cream</h5>
-  <p class="custom-product-price">$34.99</p>
-  <p class="custom-product-description">Rejuvenates and protects skin with eco-friendly, organic green tea extract. Helps reduce aging and wrinkles.</p>
-  <button class="custom-product-btn" onclick="addToCart('Green Tea Antioxidant Cream', '$34.99')">Add to Cart</button>
-</div>
-
-<!-- Product 7 - Organic Hemp Seed Oil (Medicinal & Eco-Friendly) -->
-<div class="custom-product-card" id="product6">
-  <img src="Organic Hemp Seed Oil.jpg" alt="Organic Hemp Seed Oil" class="custom-product-image">
-  <h5 class="custom-product-title">Organic Hemp Seed Oil</h5>
-  <p class="custom-product-price">$24.99</p>
-  <p class="custom-product-description">Hemp seed oil nourishes and moisturizes your skin while helping with inflammation and skin conditions. Eco-friendly and ethically sourced.</p>
-  <button class="custom-product-btn" onclick="addToCart('Organic Hemp Seed Oil', '$24.99')">Add to Cart</button>
-</div>
-
-<!-- Product 8 - Organic Jojoba Oil (Medicinal & Eco-Friendly) -->
-<div class="custom-product-card" id="product7">
-  <img src="Organic Jojoba Oil.jpg" alt="Organic Jojoba Oil" class="custom-product-image">
-  <h5 class="custom-product-title">Organic Jojoba Oil</h5>
-  <p class="custom-product-price">$21.99</p>
-  <p class="custom-product-description">Pure organic jojoba oil, great for moisturizing and healing dry or sensitive skin. Eco-friendly and 100% natural.</p>
-  <button class="custom-product-btn" onclick="addToCart('Organic Jojoba Oil', '$21.99')">Add to Cart</button>
-</div>
-
-<!-- Product 9 - Rosehip Oil (Eco-Friendly & Medicinal) -->
-<div class="custom-product-card" id="product8">
-  <img src="Rosehip Oil.jpg" alt="Rosehip Oil" class="custom-product-image">
-  <h5 class="custom-product-title">Rosehip Oil</h5>
-  <p class="custom-product-price">$29.99</p>
-  <p class="custom-product-description">Rich in vitamins and antioxidants, this organic rosehip oil helps with skin regeneration and scar healing. Perfect for dry skin and anti-aging.</p>
-  <button class="custom-product-btn" onclick="addToCart('Rosehip Oil', '$29.99')">Add to Cart</button>
-</div>
+        <!-- Add more product cards here in the same structure -->
+        
       </div>
     </div>
   </section>
@@ -254,97 +244,5 @@
     }
   </script>
 
-  <!-- Stay Connected Section -->
-<section class="stay-connected-section">
-  <div class="container">
-    <div class="stay-connected-content">
-      <h2 class="section-title">Stay Connected</h2>
-      <p class="section-description">
-        Join our community and be the first to know about exclusive offers, new arrivals, and special promotions!
-      </p>
-      <div class="subscribe-form">
-        <input type="email" id="emailInput" placeholder="Enter your email address" class="email-input" required>
-        <button class="subscribe-btn" onclick="subscribe()">Subscribe</button>
-      </div>
-    </div>
-    <div class="social-media-icons">
-      <a href="#" class="social-icon"><img src="faebook.jpg" alt="Facebook"></a>
-      <a href="#" class="social-icon"><img src="instagram.gif" alt="Instagram"></a>
-      <a href="#" class="social-icon"><img src="twitter.png" alt="Twitter"></a>
-      <a href="#" class="social-icon"><img src="linked-in.png" alt="LinkedIn"></a>
-     
-    </div>
-  </div>
-</section>
-
-<!-- Pop-up Success Message -->
-<div id="popup" class="popup">
-  <div class="popup-content">
-    <p>🎉 Successfully Subscribed! 🎉</p>
-    <p>Thank you for joining our community! We're excited to keep you updated.</p>
-  </div>
-</div>
-<script src="subscribed.js"></script>
- <!-- Custom Footer Section -->
-<footer class="custom-footer">
-  <div class="footer-container">
-    <!-- Logo and Slogan -->
-    <div class="footer-logo">
-      <img src="Green Tea & Aloe Facial Cleanser.jpg" alt="Brand Logo" class="footer-logo-img">
-      <p class="footer-slogan">Join the Movement, Stay Ahead!</p>
-    </div>
-
-    <!-- Important Links -->
-    <div class="footer-links">
-      <h3 class="footer-section-title">Quick Links</h3>
-      <ul class="footer-link-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about us.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact us.html">Contact</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms & Conditions</a></li>
-      </ul>
-    </div>
-
-    <!-- Our Community & Social Media -->
-    <div class="footer-community">
-      <h3 class="footer-section-title">Our Community</h3>
-      <p>Be part of a vibrant, supportive community where you can learn, share, and grow together.</p>
-      <a href="community.html" class="community-btn">Join Our Community</a>
-      <div class="footer-social">
-        <a href="#" class="social-icon"><img src="faebook.jpg" alt="Facebook"></a>
-        <a href="#" class="social-icon"><img src="instagram.gif" alt="Instagram"></a>
-        <a href="#" class="social-icon"><img src="twitter.png" alt="Twitter"></a>
-        <a href="#" class="social-icon"><img src="linked-in.png" alt="LinkedIn"></a>
-      </div>
-    </div>
-
-    <!-- Newsletter Signup -->
-    <div class="footer-newsletter">
-      <h3 class="footer-section-title">Stay Informed</h3>
-      <p>Subscribe to our newsletter for updates, offers, and news straight to your inbox.</p>
-      <div class="newsletter-form">
-        <input type="email" placeholder="Enter your email" class="email-input" id="emailInput" required>
-        <button class="newsletter-btn" id="subscribeBtn">Subscribe</button>
-      </div>
-    </div>
-  </div>
- <!-- Popup Message -->
- <div id="popupMessage" class="popup-message">
-  <div class="popup-content">
-    <span id="popupCloseBtn" class="popup-close-btn">&times;</span>
-    <h3>🎉 Successfully Subscribed! 🎉</h3>
-    <p>Thank you for subscribing to our newsletter. Stay tuned for the latest updates.</p>
-  </div>
-</div>
-</footer>
-<script src="newspapers subscribed.js"></script>
-  <!-- Footer Bottom Section -->
-  <div class="footer-bottom">
-    <p>&copy; 2024 Amos Beauty and Skincare Essentials store. All Rights Reserved.</p>
-  </div>
-
- 
 </body>
 </html>
