@@ -6,6 +6,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Amos Beauty and Skincare Essentials store</title>
     <link rel="stylesheet" href="styles.css">
+  <style>
+
+
+    .custom-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .custom-product-card-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .custom-product-card {
+      width: 22%;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .custom-product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .custom-product-card h5 {
+      margin: 15px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .custom-product-price {
+      margin: 10px 15px;
+      font-size: 16px;
+      color: #007bff;
+    }
+
+    .custom-product-btn {
+      margin: 10px 15px;
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+
+    .custom-product-btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Modal Style */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup-content {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .popup button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .popup button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</style>
   </head>
   <body>
    
@@ -47,107 +144,76 @@
     <script src="header.js"></script>
 
 
-    <section class="custom-featured-products">
-      <div class="custom-container">
-        <h2 class="custom-section-title">Products  to Shop</h2>
-        <div class="custom-product-card-container">
-          
-          <!-- Product 1 -->
-          <div class="custom-product-card">
-            <div class="custom-product-card-inner">
-              <div class="custom-product-card-front">
-                <img src="natural v c.jpg" alt="Natural Vitamin C Serum" class="custom-product-image">
-                <h5 class="custom-product-title">Natural Vitamin C Serum</h5>
-                <p class="custom-product-price">$29.99</p>
-                <p class="custom-product-description">Brighten & Revitalize your skin with Vitamin C.</p>
-              </div>
-              <div class="custom-product-card-back">
-                <h5> Availlable products:</h5>
-                <ul class="custom-product-features">
-                  <li>Reduces dark spots</li>
-                  <li>Boosts collagen production</li>
-                  <li>Improves skin texture</li>
-                  <li>100% natural ingredients</li>
-                </ul>
-                <p>This serum is perfect for a bright, youthful glow.</p>
-                <button class="custom-product-btn">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-    
-          <!-- Product 2 -->
-          <div class="custom-product-card">
-            <div class="custom-product-card-inner">
-              <div class="custom-product-card-front">
-                <img src="Lavender Night Cream.jpg" alt="Lavender Night Cream" class="custom-product-image">
-                <h5 class="custom-product-title">Lavender Night Cream</h5>
-                <p class="custom-product-price">$39.99</p>
-                <p class="custom-product-description">Calm and hydrate your skin overnight.</p>
-              </div>
-              <div class="custom-product-card-back">
-                <h5>Product Features:</h5>
-                <ul class="custom-product-features">
-                  <li>Moisturizes deeply</li>
-                  <li>Reduces redness & irritation</li>
-                  <li>Contains natural lavender extract</li>
-                  <li>Perfect for sensitive skin</li>
-                </ul>
-                <p>Wake up with smooth, hydrated skin.</p>
-                <button class="custom-product-btn">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-    
-          <!-- Product 3 -->
-          <div class="custom-product-card">
-            <div class="custom-product-card-inner">
-              <div class="custom-product-card-front">
-                <img src="Activated Charcoal Face Mask1.jpg" alt="Activated Charcoal Face Mask" class="custom-product-image">
-                <h5 class="custom-product-title">Activated Charcoal Face Mask</h5>
-                <p class="custom-product-price">$19.99</p>
-                <p class="custom-product-description">Deep clean and detoxify your skin with activated charcoal.</p>
-              </div>
-              <div class="custom-product-card-back">
-                <h5>Product Features:</h5>
-                <ul class="custom-product-features">
-                  <li>Detoxifies and removes impurities</li>
-                  <li>Helps control oil production</li>
-                  <li>Reduces acne and blackheads</li>
-                  <li>Suitable for all skin types</li>
-                </ul>
-                <p>This mask leaves your skin feeling fresh and clean.</p>
-                <button class="custom-product-btn">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-    
-          <!-- Product 4 -->
-          <div class="custom-product-card">
-            <div class="custom-product-card-inner">
-              <div class="custom-product-card-front">
-                <img src="Coconut & Vanilla Body Scrub 1.jpg" alt="Coconut & Vanilla Body Scrub" class="custom-product-image">
-                <h5 class="custom-product-title">Coconut & Vanilla Body Scrub</h5>
-                <p class="custom-product-price">$24.99</p>
-                <p class="custom-product-description">Exfoliate and hydrate your skin with a tropical scent.</p>
-              </div>
-              <div class="custom-product-card-back">
-                <h5>Product Features:</h5>
-                <ul class="custom-product-features">
-                  <li>Removes dead skin cells</li>
-                  <li>Moisturizes the skin</li>
-                  <li>Leaves a refreshing scent</li>
-                  <li>Perfect for smooth, glowing skin</li>
-                </ul>
-                <p>This scrub is ideal for a spa-like experience at home.</p>
-                <button class="custom-product-btn">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-    
+
+  <!-- Product Section -->
+  <section class="custom-featured-products">
+    <div class="custom-container">
+      <h2 class="custom-section-title">Products to Shop</h2>
+      <div class="custom-product-card-container">
+        
+        <!-- Product 1 -->
+        <div class="custom-product-card" id="product1">
+          <img src="natural v c.jpg" alt="Natural Vitamin C Serum" class="custom-product-image">
+          <h5 class="custom-product-title">Natural Vitamin C Serum</h5>
+          <p class="custom-product-price">$29.99</p>
+          <p class="custom-product-description">Brighten & Revitalize your skin with Vitamin C.</p>
+          <button class="custom-product-btn" onclick="addToCart('Natural Vitamin C Serum', '$29.99')">Add to Cart</button>
         </div>
-      </div>
-    </section>
     
+        <!-- Product 2 -->
+        <div class="custom-product-card" id="product2">
+          <img src="Lavender Night Cream.jpg" alt="Lavender Night Cream" class="custom-product-image">
+          <h5 class="custom-product-title">Lavender Night Cream</h5>
+          <p class="custom-product-price">$39.99</p>
+          <p class="custom-product-description">Calm and hydrate your skin overnight.</p>
+          <button class="custom-product-btn" onclick="addToCart('Lavender Night Cream', '$39.99')">Add to Cart</button>
+        </div>
+    
+        <!-- Product 3 -->
+        <div class="custom-product-card" id="product3">
+          <img src="Activated Charcoal Face Mask1.jpg" alt="Activated Charcoal Face Mask" class="custom-product-image">
+          <h5 class="custom-product-title">Activated Charcoal Face Mask</h5>
+          <p class="custom-product-price">$19.99</p>
+          <p class="custom-product-description">Deep clean and detoxify your skin with activated charcoal.</p>
+          <button class="custom-product-btn" onclick="addToCart('Activated Charcoal Face Mask', '$19.99')">Add to Cart</button>
+        </div>
+    
+        <!-- Product 4 -->
+        <div class="custom-product-card" id="product4">
+          <img src="Coconut & Vanilla Body Scrub 1.jpg" alt="Coconut & Vanilla Body Scrub" class="custom-product-image">
+          <h5 class="custom-product-title">Coconut & Vanilla Body Scrub</h5>
+          <p class="custom-product-price">$24.99</p>
+          <p class="custom-product-description">Exfoliate and hydrate your skin with a tropical scent.</p>
+          <button class="custom-product-btn" onclick="addToCart('Coconut & Vanilla Body Scrub', '$24.99')">Add to Cart</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Popup Modal -->
+  <div class="popup" id="popupMessage">
+    <div class="popup-content">
+      <h3>Item Added to Cart</h3>
+      <p id="cartMessage"></p>
+      <button onclick="closePopup()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    // Function to show the popup message
+    function addToCart(productName, productPrice) {
+      const message = `You have added ${productName} (${productPrice}) to your cart.`;
+      document.getElementById('cartMessage').innerText = message;
+      document.getElementById('popupMessage').style.display = 'flex';
+    }
+
+    // Function to close the popup
+    function closePopup() {
+      document.getElementById('popupMessage').style.display = 'none';
+    }
+  </script>
+
   <!-- Stay Connected Section -->
 <section class="stay-connected-section">
   <div class="container">
