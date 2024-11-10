@@ -7,7 +7,19 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-   
+   <!-- Promo Banner -->
+<div class="amos-promo">
+  <div class="amos-promo-content">
+    <span class="amos-promo-text">Welcome to Amos Beauty and Skincare Essentials!</span>
+    <button class="amos-close-btn" onclick="closeAmosPromoBanner()">X</button>
+  </div>
+</div>
+    <script>// Function to close the promo banner
+function closeAmosPromoBanner() {
+  const banner = document.querySelector('.amos-promo');
+  banner.classList.add('closed');
+}
+</script>
     <header class="header">
       <div class="nav-container">
        
