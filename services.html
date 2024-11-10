@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amos Beauty and Skincare Essentials store</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+   
+    <header class="header">
+      <div class="nav-container">
+       
+        <a href="index.html" class="logo">
+          <img src="Green Tea & Aloe Facial Cleanser.jpg" alt="Shop Logo">
+        </a>
+  
+      
+        <span class="toggle-btn" onclick="toggleSidebar()">&#9776;</span>
+  
+        
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about us.html">About Us</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="contact us.html">Contact</a></li>
+        </ul>
+  
+       
+        <div class="actions">
+          <a href="login-sign in.html" class="btn btn-outline">Login</a>
+          <a href="login-sign in.html" class="btn btn-primary">Sign Up</a>
+        </div>
+      </div>
+    </header>
+  
+    <div id="sidebarMenu" class="sidebar">
+      <span class="close-btn" onclick="toggleSidebar()">&times;</span>
+      <a href="index.html">Home</a>
+      <a href="about us.html">About Us</a>
+      <a href="shop.html">Shop</a>
+      <a href="contact us.html">Contact</a>
+      <a href="login-sign in.html" class="btn btn-outline d-block">Login</a>
+      <a href="login-sign in.html" class="btn btn-primary d-block">Sign Up</a>
+    </div>
+    <script src="header.js"></script>
+
+
+
+
+<!-- Services Section -->
+<section class="services py-5">
+  <div class="container">
+    <h2 class="section-title text-center">Our Beauty & Skincare Services</h2>
+    <div class="row">
+      <!-- Service 1: Skincare Consultation -->
+      <div class="col-md-4 service-item">
+        <div class="service-card">
+          <img src="Nourish Your Skin Naturally.jpg" alt="Skincare Consultation" class="service-image">
+          <h3 class="service-title">Personalized Skincare Consultation</h3>
+          <p class="service-description">
+            Receive expert advice on the best skincare routine for your skin type and concerns, from acne to anti-aging.
+          </p>
+        </div>
+      </div>
+
+      <!-- Service 2: Organic Facial Treatments -->
+      <div class="col-md-4 service-item">
+        <div class="service-card">
+          <img src="Nourish Your Skin Naturally2.jpg" alt="Organic Facial Treatments" class="service-image">
+          <h3 class="service-title">Organic Facial Treatments</h3>
+          <p class="service-description">
+            Rejuvenate your skin with our luxurious organic facials, using all-natural ingredients to hydrate and renew your complexion.
+          </p>
+        </div>
+      </div>
+
+      <!-- Service 3: Beauty Product Recommendations -->
+      <div class="col-md-4 service-item">
+        <div class="service-card">
+          <img src="Nourish Your Skin Naturally3.jpg" alt="Beauty Product Recommendations" class="service-image">
+          <h3 class="service-title">Tailored Beauty Product Recommendations</h3>
+          <p class="service-description">
+            Get personalized recommendations for skincare and beauty products that suit your skin type and beauty goals.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+
+  <!-- Stay Connected Section -->
+<section class="stay-connected-section">
+  <div class="container">
+    <div class="stay-connected-content">
+      <h2 class="section-title">Stay Connected</h2>
+      <p class="section-description">
+        Join our community and be the first to know about exclusive offers, new arrivals, and special promotions!
+      </p>
+      <div class="subscribe-form">
+        <input type="email" id="emailInput" placeholder="Enter your email address" class="email-input" required>
+        <button class="subscribe-btn" onclick="subscribe()">Subscribe</button>
+      </div>
+    </div>
+    <div class="social-media-icons">
+      <a href="#" class="social-icon"><img src="faebook.jpg" alt="Facebook"></a>
+      <a href="#" class="social-icon"><img src="instagram.gif" alt="Instagram"></a>
+      <a href="#" class="social-icon"><img src="twitter.png" alt="Twitter"></a>
+      <a href="#" class="social-icon"><img src="linked-in.png" alt="LinkedIn"></a>
+     
+    </div>
+  </div>
+</section>
+
+<!-- Pop-up Success Message -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <p>🎉 Successfully Subscribed! 🎉</p>
+    <p>Thank you for joining our community! We're excited to keep you updated.</p>
+  </div>
+</div>
+<script src="subscribed.js"></script>
+ <!-- Custom Footer Section -->
+<footer class="custom-footer">
+  <div class="footer-container">
+    <!-- Logo and Slogan -->
+    <div class="footer-logo">
+      <img src="Green Tea & Aloe Facial Cleanser.jpg" alt="Brand Logo" class="footer-logo-img">
+      <p class="footer-slogan">Join the Movement, Stay Ahead!</p>
+    </div>
+
+    <!-- Important Links -->
+    <div class="footer-links">
+      <h3 class="footer-section-title">Quick Links</h3>
+      <ul class="footer-link-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about us.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact us.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms & Conditions</a></li>
+      </ul>
+    </div>
+
+    <!-- Our Community & Social Media -->
+    <div class="footer-community">
+      <h3 class="footer-section-title">Our Community</h3>
+      <p>Be part of a vibrant, supportive community where you can learn, share, and grow together.</p>
+      <a href="community.html" class="community-btn">Join Our Community</a>
+      <div class="footer-social">
+        <a href="#" class="social-icon"><img src="faebook.jpg" alt="Facebook"></a>
+        <a href="#" class="social-icon"><img src="instagram.gif" alt="Instagram"></a>
+        <a href="#" class="social-icon"><img src="twitter.png" alt="Twitter"></a>
+        <a href="#" class="social-icon"><img src="linked-in.png" alt="LinkedIn"></a>
+      </div>
+    </div>
+
+    <!-- Newsletter Signup -->
+    <div class="footer-newsletter">
+      <h3 class="footer-section-title">Stay Informed</h3>
+      <p>Subscribe to our newsletter for updates, offers, and news straight to your inbox.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Enter your email" class="email-input" id="emailInput" required>
+        <button class="newsletter-btn" id="subscribeBtn">Subscribe</button>
+      </div>
+    </div>
+  </div>
+ <!-- Popup Message -->
+ <div id="popupMessage" class="popup-message">
+  <div class="popup-content">
+    <span id="popupCloseBtn" class="popup-close-btn">&times;</span>
+    <h3>🎉 Successfully Subscribed! 🎉</h3>
+    <p>Thank you for subscribing to our newsletter. Stay tuned for the latest updates.</p>
+  </div>
+</div>
+</footer>
+<script src="newspapers subscribed.js"></script>
+  <!-- Footer Bottom Section -->
+  <div class="footer-bottom">
+    <p>&copy; 2024 Amos Beauty and Skincare Essentials store. All Rights Reserved.</p>
+  </div>
+
+ 
+</body>
+</html>
