@@ -9,15 +9,22 @@
    
 /* Testimonial Section */
 .testimonial-section {
-  margin-bottom: 50px; /* Corrected typo */
+  margin-bottom: 80px; /* Increased space below the testimonial section */
   padding: 5%;
   width: 90%;
   max-width: 1200px;
   margin-top: 50px;
   text-align: center;
-  perspective: 1500px; /* Perspective for 3D effect */
+  perspective: 1500px;
   position: relative;
-  box-sizing: border-box; /* Ensures padding is included in the width/height */
+  box-sizing: border-box;
+}
+
+/* Testimonial Title */
+.testimonial-title {
+  font-size: 2rem;
+  margin-bottom: 30px; /* Increased space below the title */
+  color: #333;
 }
 
 /* 3D Circular Carousel Container */
@@ -53,6 +60,7 @@
   text-align: center;
   transition: transform 0.3s ease;
   transform-origin: center;
+  overflow: hidden; /* Ensure no overflow of content */
 }
 
 .testimonial-card img {
@@ -66,12 +74,20 @@
   font-size: 1.25rem;
   color: #333;
   margin-bottom: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap; /* Prevent text from overflowing */
 }
 
 .testimonial-card p {
   font-size: 1rem;
   color: #666;
   line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit text to 3 lines */
+  -webkit-box-orient: vertical;
 }
 
 /* 3D Circular Effect */
@@ -94,7 +110,7 @@
   .testimonial-section {
     padding: 3%; /* Reduce padding for smaller screens */
   }
-  
+
   .testimonial-card {
     width: 250px;
     height: 200px;
@@ -103,7 +119,15 @@
 
   .testimonial-title {
     font-size: 1.5rem;
-    margin-bottom: 15px; /* Slightly reduced margin */
+    margin-bottom: 15px;
+  }
+
+  .testimonial-card h3 {
+    font-size: 1.1rem; /* Slightly smaller heading for small screens */
+  }
+
+  .testimonial-card p {
+    font-size: 0.9rem; /* Smaller text for mobile */
   }
 }
 
@@ -111,7 +135,7 @@
   .testimonial-section {
     padding: 2%; /* Further reduce padding on very small screens */
   }
-  
+
   .testimonial-card {
     width: 200px;
     height: 180px;
@@ -121,6 +145,14 @@
   .testimonial-title {
     font-size: 1.25rem;
     margin-bottom: 10px; /* Reduced bottom margin */
+  }
+
+  .testimonial-card h3 {
+    font-size: 1rem; /* Small font for very small screens */
+  }
+
+  .testimonial-card p {
+    font-size: 0.8rem; /* Small text for very small screens */
   }
 }
 
@@ -423,7 +455,7 @@ function closeAmosPromoBanner() {
 
         <!-- Testimonial 3 -->
         <div class="testimonial-card" style="transform: rotateY(120deg) translateZ(500px);">
-          <img src="test2.jpeg.jpeg" alt="Customer 3">
+          <img src="test0.jpeg.jpeg" alt="Customer 3">
           <h3>Mark Taylor</h3>
           <p>"A must-have for anyone looking to improve their skincare. I saw results almost immediately!"</p>
         </div>
@@ -437,7 +469,7 @@ function closeAmosPromoBanner() {
 
         <!-- Testimonial 5 -->
         <div class="testimonial-card" style="transform: rotateY(240deg) translateZ(500px);">
-          <img src="htest4.jpeg.jpeg" alt="Customer 5">
+          <img src="test4.jpeg.jpeg" alt="Customer 5">
           <h3>Sarah Lee</h3>
           <p>"I absolutely love this product! It works wonders on my skin, and the results are visible almost immediately!"</p>
         </div>
