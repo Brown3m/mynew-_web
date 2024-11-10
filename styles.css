@@ -13,7 +13,7 @@ body,html{
 
  
   .header {
-    background-color: whitesmoke;
+    background-color: rgb(247, 239, 239);
     padding: 10px 20px;
     z-index: 50000;
     top: 0;
@@ -26,6 +26,7 @@ body,html{
     justify-content: space-between;
     max-width: 1200px;
     margin: auto;
+    background-color: rgb(247, 239, 239);
   }
 
   .logo img {
@@ -74,8 +75,8 @@ body,html{
     height: 100%;
     width: 0;
     position: fixed;
-    top: 0;
-    right: 0;
+    top: 10%;
+    left: 0;
     background-color: #f8f9fa;
     overflow-x: hidden;
     transition: 0.3s;
@@ -97,6 +98,8 @@ body,html{
     right: 20px;
     font-size: 1.5em;
     cursor: pointer;
+    color:black;
+    font-weight:600;
   }
 
   .toggle-btn {
@@ -682,6 +685,7 @@ body {
 .footer-link-list li a:hover {
   color: #009688;
 }
+
 
 .footer-community p {
   font-size: 1rem;
