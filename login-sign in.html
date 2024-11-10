@@ -7,6 +7,134 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Amos Beauty and Skincare Essentials store</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+          font-family: 'Arial', sans-serif;
+          background-color: #f4f7fc;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+        }
+    
+        .auth-container {
+          background-color: #ffffff;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          max-width: 400px;
+          width: 100%;
+          padding: 40px;
+          text-align: center;
+        }
+    
+        .auth-container h2 {
+          font-size: 24px;
+          margin-bottom: 20px;
+          color: #333;
+        }
+    
+        .auth-container p {
+          color: #666;
+          font-size: 14px;
+        }
+    
+        .auth-form {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+        }
+    
+        .auth-form input {
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 14px;
+          outline: none;
+          width: 100%;
+        }
+    
+        .auth-form input:focus {
+          border-color: #007bff;
+        }
+    
+        .auth-form button {
+          padding: 12px;
+          background-color: #007bff;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          font-size: 16px;
+          cursor: pointer;
+        }
+    
+        .auth-form button:hover {
+          background-color: #0056b3;
+        }
+    
+        .auth-toggle {
+          margin-top: 20px;
+          display: flex;
+          justify-content: center;
+          gap: 5px;
+        }
+    
+        .auth-toggle a {
+          text-decoration: none;
+          color: #007bff;
+          font-weight: bold;
+        }
+    
+        .auth-toggle a:hover {
+          text-decoration: underline;
+        }
+    
+        .auth-option {
+          display: none;
+        }
+    
+        .auth-option.active {
+          display: block;
+        }
+    
+        /* Popup Modal Styles */
+        .popup {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          justify-content: center;
+          align-items: center;
+          z-index: 1000;
+        }
+    
+        .popup-content {
+          background-color: #fff;
+          padding: 30px;
+          border-radius: 8px;
+          text-align: center;
+          max-width: 400px;
+          width: 100%;
+        }
+    
+        .popup button {
+          padding: 10px 20px;
+          background-color: #007bff;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+    
+        .popup button:hover {
+          background-color: #0056b3;
+        }
+      </style>
+    
+    
   </head>
   <body>
    
@@ -48,41 +176,110 @@
     <script src="header.js"></script>
 
 
+  <!-- Popup Modal -->
+  <div class="popup" id="popupMessage">
+    <div class="popup-content">
+      <h3>Account Created Successfully!</h3>
+      <p>You can now log in using your credentials.</p>
+      <button onclick="closePopup()">Close</button>
+    </div>
+  </div>
 
-    <div class="container">
-      <!-- Toggle Buttons -->
-      <div class="toggle-buttonss">
-        <button id="signup-toggle" class="active" onclick="showSignUp()">Sign Up</button>
-        <button id="login-toggle" onclick="showLogin()">Log In</button>
-      </div>
-    
-      <!-- Sign Up Form -->
-      <div id="signup-container">
-        <h2>Create Account</h2>
-        <form id="signup-form">
-          <input type="text" id="signup-name" placeholder="Full Name" required>
-          <input type="email" id="signup-email" placeholder="Email" required>
-          <input type="password" id="signup-password" placeholder="Password" required>
-          <button type="button" onclick="createAccount()">Submit</button>
-        </form>
-      </div>
-    
-      <!-- Login Form -->
-      <div id="login-container" style="display: none;">
-        <h2 class="h2">Login</h2>
-        <form id="login-form">
-          <input type="email" id="login-email" placeholder="Email" required>
-          <input type="password" id="login-password" placeholder="Password" required>
-          <button type="button" onclick="login()">Login</button>
-        </form>
+  <div class="auth-container">
+    <!-- Login Form -->
+    <div class="auth-option login active" id="login-form">
+      <h2>Login</h2>
+      <form class="auth-form" id="loginForm" onsubmit="handleLogin(event)">
+        <input type="email" id="loginEmail" placeholder="Email" required>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+      <div class="auth-toggle">
+        <p>Don't have an account?</p><a href="#" onclick="toggleForm('signup')">Sign Up</a>
       </div>
     </div>
-    
-    <!-- Popup Message -->
-    <div class="popup" id="popup-message"></div>
-    
-    <script src="login-sign.js"></script>
-    
+
+    <!-- Sign Up Form -->
+    <div class="auth-option signup" id="signup-form">
+      <h2>Sign Up</h2>
+      <form class="auth-form" id="signupForm" onsubmit="handleSignUp(event)">
+        <input type="text" id="signupName" placeholder="Full Name" required>
+        <input type="email" id="signupEmail" placeholder="Email" required>
+        <input type="password" id="signupPassword" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+      </form>
+      <div class="auth-toggle">
+        <p>Already have an account?</p><a href="#" onclick="toggleForm('login')">Login</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Simulate a database with an array of users
+    let users = [];
+
+    // Toggle between Login and Signup forms
+    function toggleForm(formType) {
+      if (formType === 'login') {
+        document.getElementById('login-form').classList.add('active');
+        document.getElementById('signup-form').classList.remove('active');
+      } else {
+        document.getElementById('signup-form').classList.add('active');
+        document.getElementById('login-form').classList.remove('active');
+      }
+    }
+
+    // Handle Sign Up Form Submission
+    function handleSignUp(event) {
+      event.preventDefault();
+      const name = document.getElementById('signupName').value;
+      const email = document.getElementById('signupEmail').value;
+      const password = document.getElementById('signupPassword').value;
+
+      // Check if the user already exists
+      if (users.some(user => user.email === email)) {
+        alert('Email already registered.');
+        return;
+      }
+
+      // Add new user to the "database"
+      users.push({ name, email, password });
+
+      // Show popup after successful sign up
+      showPopup();
+      // Reset form fields
+      document.getElementById('signupForm').reset();
+    }
+
+    // Handle Login Form Submission
+    function handleLogin(event) {
+      event.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+
+      // Check if user exists and credentials are correct
+      const user = users.find(u => u.email === email && u.password === password);
+
+      if (user) {
+        alert(`Welcome back, ${user.name}!`);
+        document.getElementById('loginForm').reset();
+      } else {
+        alert('Invalid credentials. Please check your email and password.');
+      }
+    }
+
+    // Show popup message after successful sign up
+    function showPopup() {
+      document.getElementById('popupMessage').style.display = 'flex';
+    }
+
+    // Close popup after sign up
+    function closePopup() {
+      document.getElementById('popupMessage').style.display = 'none';
+      toggleForm('login');  // Automatically switch to login form after sign up
+    }
+  </script>
+
  <!-- Custom Footer Section -->
 <footer class="custom-footer">
   <div class="footer-container">
