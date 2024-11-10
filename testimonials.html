@@ -266,11 +266,18 @@ function closeAmosPromoBanner() {
   <script>
     //Adjust the speed of the carousel's rotation
     const carouselWrapper = document.getElementById('carouselWrapper');
-    let speed = 15; // Rotation speed (in seconds)
+    let speed = 8; // Rotation speed (in seconds)
     carouselWrapper.style.animationDuration = `${speed}s`;
   </script>
 
-
+<section class="empty-space"></section>
+    <script>
+/* Empty Section to create white space */
+.empty-space {
+  height: 200px; /*  height */
+  background-color: white; /* ensures it is white even if the default background is changed */
+}
+    </script>
  <!-- Custom Footer Section -->
 <footer class="custom-footer">
   <div class="footer-container">
